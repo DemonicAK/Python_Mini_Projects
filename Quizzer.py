@@ -10,7 +10,7 @@ Q=input('DO U WANT TO PLAY: ')      #asking user
 def gameplay():
     c=0
     Q=0
-    file =open('datw.txt','r')
+    file =open('data/quiz.txt','r')
     p=" "
     while p :
         p=file.readline()

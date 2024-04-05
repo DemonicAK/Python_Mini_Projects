@@ -6,13 +6,13 @@ from pyqrcode import QRCode
   
   
 # String which represents the QR code
-s = "img101.jpg"
+s = "data/img101.jpg"
   
 # Generate QR code
 url = pyqrcode.create(s)
   
 # Create and save the svg file naming "myqr.svg"
-url.svg("myqr.svg", scale = 8)
+url.svg("data/myqr.svg", scale = 8)
   
 # Create and save the png file naming "myqr.png"
-url.png('myqr.png', scale = 6)
+url.png('data/myqr.png', scale = 6)

@@ -2,13 +2,13 @@ import pickle
 import random
 
 #########
-files=['stationary.txt']
+files=['data/stationary.txt']
 
 ########
 
 print('Welcome to the vocubulary quiz program.Select one of the following word lists:')
 for i in files:
-    print (i)
+    print (i[5:])
 
 ############
 p=input('enter:')
