@@ -21,8 +21,30 @@ Dependencies:
 
 import pandas as pd
 
+import csv
+
+# Input and output file names
+input_file = 'input.csv'
+output_file = 'output.csv'
+
+# Read the input CSV and write to the output CSV
+with open(input_file, 'r', newline='') as infile, open(output_file, 'w', newline='') as outfile:
+    reader = csv.DictReader(infile)
+    fieldnames = reader.fieldnames
+
+    writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+    writer.writeheader()
+
+    for row in reader:
+        # Set the 'folder' column to an empty string
+        row['folder'] = ''
+        writer.writerow(row)
+
+print(f"Process completed. The 'folder' column has been emptied in {
+      output_file}")
+
 # Read the CSV file
-df = pd.read_csv('german_english_words.csv')
+df = pd.read_csv('output.csv')
 # Note: 'bitwarden_export_20240906212941.csv' is the input file name. Adjust if necessary.
 
 # Remove duplicate rows
